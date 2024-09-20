@@ -12,11 +12,10 @@ const propertySchema = new mongoose.Schema({
         lng: { type: Number, required: true }
       }
     },
-    property_type: { type: String, required: true }, // e.g., apartment, house
+    property_type: { type: String, required: true, enum: ["Apartment", "Villa", "Twinhouse", "Townhouse", "Duplex", "Penthouse", "Chalet", "Studio", "Cabin", "Clinic", "Office", "Retail"] },
     number_of_rooms: { type: Number, required: true },
-    images: { type: [String], default: [] }, // Array of image URLs
-    videos: { type: String }, // URL to video (optional)
-    tours_3D: { type: String } // URL to 3D tours (optional)
+    images: { type: [String], default: [] }, 
+    videos: { type: String },
   }, { timestamps: true });
 
 const Property = mongoose.model('Property', propertySchema);

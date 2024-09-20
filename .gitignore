@@ -132,5 +132,6 @@ package.json
 package-lock.json
 eslint.config.js
 tailwind.config.js
+postcss.config.js
 vite.config.js
 .env
